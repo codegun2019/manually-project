@@ -14,6 +14,11 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, reactive } from 'vue'
+import  User  from '@/type/user.type'
+
+interface LoginState{
+    account: User;
+}
 
 export default defineComponent({
     emits: ["onlogin"], //> App.vue
@@ -21,7 +26,8 @@ export default defineComponent({
     //การสื่อสารระหว่าง component
     setup(props,{emit}) {
 
-        const states = reactive({account: { username:"",password :""}})
+        const states = reactive<LoginState>({account: { username:"",password :""}})
+
         const onClickClearAccount = ()=>{
             states.account = {username:"",password:""}
         }

@@ -5,7 +5,7 @@
   <button @click="onClickAdd">Add</button>
   <button @click="onClickAddref">AddRef</button>
   <hr />
-  <LoginForm title="Login"/>
+  <LoginForm title="Login" @onlogin="onlogin" />
   <span>#Account: {{ account }}</span>
   <button @click="onClickClearAccount">onClickClearAccount</button>
 </template>
@@ -44,6 +44,10 @@ export default defineComponent({
       states.account = defaultAccount;
     };
 
+    const onlogin  = (event:any)=> {
+      alert(JSON.stringify(event))
+    }
+
     return {
       count,
       refcount,
@@ -51,6 +55,7 @@ export default defineComponent({
       onClickAddref,
       onClickClearAccount,
       states,
+      onlogin,
     };
   },
 });

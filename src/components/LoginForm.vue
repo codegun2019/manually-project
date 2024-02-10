@@ -8,7 +8,7 @@
         <br/>
         <span>#Debug : {{ states.account }}</span>
         <br/>
-        <button type="button">submit</button>
+        <button type="button" @click="onClicklogin">submit</button>
         <button type="button" @click="onClickClearAccount" >Clear</button>
     </form>
 </template>
@@ -16,16 +16,20 @@
 import { defineComponent, onMounted, reactive } from 'vue'
 
 export default defineComponent({
+    emits: ["onlogin"], //> App.vue
     props: ["title"],
     //การสื่อสารระหว่าง component
-    setup(props) {
+    setup(props,{emit}) {
 
         const states = reactive({account: { username:"",password :""}})
         const onClickClearAccount = ()=>{
             states.account = {username:"",password:""}
         }
+        const onClicklogin = () =>{
+            emit("onlogin",states.account)
+        }
 
-        return {states,onClickClearAccount};
+        return {states,onClickClearAccount,onClicklogin};
     },
 })
 </script>

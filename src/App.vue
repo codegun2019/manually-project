@@ -2,12 +2,12 @@
   <div><h1>CODEGUN</h1></div>
   <span>#Debug:{{ count }}</span>
   <span>#Ref:{{ refcount }}</span>
-  <button @click="onClickAdd">Add</button>
-  <button @click="onClickAddref">AddRef</button>
+  <button class="bg-black text-white btn text-sm px-3 min-h-[32px] mx-1" @click="onClickAdd">Add</button>
+  <button class="bg-danger text-white btn text-sm px-3 min-h-[32px] mx-1" @click="onClickAddref">AddRef</button>
   <hr />
   <LoginForm title="Login" @onlogin="onlogin" />
   <span>#Account: {{ account }}</span>
-  <button @click="onClickClearAccount">onClickClearAccount</button>
+  <button class="bg-info text-white btn text-sm px-3 min-h-[32px] mx-1" @click="onClickClearAccount">onClickClearAccount</button>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, ref, onMounted } from "vue";

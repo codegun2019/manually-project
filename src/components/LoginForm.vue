@@ -1,15 +1,15 @@
 <template>
     <div><h1>{{ title }}</h1></div>
-    <form>
+    <form class="mx-2 px-2">
         <label for="username"></label>
-        <input type="text" name="username" id="username" v-model="states.account.username" />
+        <input class="form-control" type="text" name="username" id="username" v-model="states.account.username" />
         <label for="password"></label>
-        <input type="text" name="password" id="password" v-model="states.account.password" />
+        <input class="form-control" type="text" name="password" id="password" v-model="states.account.password" />
         <br/>
         <span>#Debug : {{ states.account }}</span>
         <br/>
-        <button type="button" @click="onClicklogin">submit</button>
-        <button type="button" @click="onClickClearAccount" >Clear</button>
+        <button class="bg-success text-white btn text-sm px-3 min-h-[32px] mx-1" type="button" @click="onClicklogin">submit</button>
+        <button class="bg-secondary text-white btn text-sm px-3 min-h-[32px] mx-1" type="button" @click="onClickClearAccount" >Clear</button>
     </form>
 </template>
 <script lang="ts">

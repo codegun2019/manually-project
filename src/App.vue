@@ -1,30 +1,21 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div><h1>CODEGUN</h1></div>
+  <h2>#Debug:{{ count }}</h2>
+  <h2>#Ref:{{ refcount }}</h2>
 </template>
+<script lang="ts">
+import { defineComponent, ref } from "vue";
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default defineComponent({
+  setup() {
+    let count = 20; //เปลี่ยนแปลงค่าได้
+    const refcount   = ref<number>(2)
 
-nav {
-  padding: 30px;
-}
+    return {
+      count,
+      refcount
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+    };
+  },
+});
+</script>
